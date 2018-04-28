@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html ng-app="sms">
+<head>
+  <title>
+    Student Management System (SMS)
+  </title>
+  <link href="css/main.css" type="text/css" rel="stylesheet" />
+</head>
+<body>
+  <header>Student Record header
+  <nav id="nav1"></nav>
+</header>
+  <div id="content">
+  <img id="SMS" src="img/SMSsystem.png" alt="SMS system"/>
+
+  <fieldset>
+    <legend>List of Teachers </legend>
+    <input ng-model type="text" name="id" id="id"/>
+    <input ng-model type="text" name="name" id="name"/>
+    <select ng-model name="schedule">
+       <option>Summary</option>
+       <option>Schedule</option>
+       <option>Balance</option>
+    </select>
+    <div ng-controller="StudentRecCtrl"></div>
+    <table>
+    <tr ng-repeat="row in students">
+      <td>{{row.id}}</td>
+      <td>{{row.name}}</td>
+    </tr>
+    </table>
+
+
+  </fieldset>
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js">
+  <script src="js/angular.min.js" type="text/javascript"></script>
+  <script src="js/controllers.js" type="text/javascript"></script>
+  <script src="js/navlist.js" type="text/javascript"></script>
+<footer>Copyright &copy; 2018 </footer>
+</body>
+</html>

@@ -1,0 +1,17 @@
+body {
+background-color: grey;
+color: white;
+/* width: 600px;
+length: 300px;
+*/
+text-align: center;
+border: 2px solid red;
+float: clear;
+}
+header {
+font-size: 2em;
+}
+nav {
+  color: green;
+  font-size: 2em;
+}
