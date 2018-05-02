@@ -1,0 +1,207 @@
+<!doctype html>
+<html>
+  <head>
+    <style>
+      body{
+      text-align: center;
+      background-color: #efefef;
+      color: #111111;
+      }
+      
+      div#content {
+      margin: 10px auto 10px auto;
+      text-align: center;
+      }
+      
+      table {
+      margin: 20px auto 20px auto;
+      padding: 20px;
+      border: 2px solid #000000;
+      }
+      
+      td {
+       padding: 10px 5px 10px 5px;
+      }
+
+      
+      tr.even {
+      background-color: #efefef; 
+      }
+      
+      tr:hover {
+      background-color: #ffff00;
+      }
+
+  button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px; 
+  }
+
+/*
+      button{
+     // background-color: #efefef; 
+      color : #0000ff; 
+//     text-decoration: underline; 
+     border-radius: 5px; 
+	  border : none;
+	  display: inline-block;
+}
+*/
+
+div.opview {
+    width: 400px;
+    height: 400px;
+    background-color: green;
+    color: white; button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px; 
+  }
+}
+      .t0 {
+      background-color: #c3e6e5;
+      }
+      
+      h1#ptitle {
+      font-size: 120%;
+      }
+    </style>
+    
+  </head>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+  <body>
+    <div id="content" ng-app="schl" ng-init="pageTitle='List of Students'">
+    <header><h1 id="ptitle">{{pageTitle}}</h1></header>
+    <div id="cntl" ng-controller="SCntrl">
+    <div ng-bind="test"></div>
+    
+    <select ng-model="selOption" required>
+    <option ng-repeat="op in viewOptions">{{op.id + ':' + op.desc}}</option>
+    </select>
+    
+    <table>
+      <tr><th>#</th><th>ID</th><th>Name</th><th>City</th><th>Country</th><th></th></tr>
+      <tr class="t{{$index % 2}}" ng-repeat="row in students" ng-dblclick="openWindow(selOption, row.ID)">
+	<td>{{$index + 1}}</td>
+	<td>{{row.ID}}</td> 
+	<td>{{row.FirstName + " " + row.LastName}}</td>
+	<td>{{row.City}}</td>
+	<td>{{row.Country}}</td>
+	<td><button  ng-click="openWindow(selOption,row.ID)"><a href="">Select {{row.ID}}</a></button></td>
+      </tr>
+    </table>
+    <footer>Copyright &copy; 2018</footer>
+    </div>
+    
+    <script type="text/javascript">
+      
+      function loadStudents(app)
+  {
+  app.controller("SCntrl", function ($scope, $http) {   
+  $http.get("students_mysql.php").then(function(response) {
+      $scope.students = response.data.records;
+      $scope.selected = 0;
+      });
+  $http.get("view_options.json").then(function(response) {	  
+	  $scope.viewOptions = response.data;
+      });
+      $scope.test = "This is a test of using ng-bind. It works\nbut how about in the other direction? ...blah blah blah";
+      
+      $scope.open = function () {
+	window.alert("Called");
+      };
+
+      $scope.getIndex = function() {
+        window.alert("School selected index"); //getSelectedIndex()
+      };
+      
+      $scope.openWindow = function(win, userId) {
+	  var winStr = win.split(':')[1];
+	  winStr = winStr.replace(' ', '_');
+	  
+	  // show the correct view:
+	  viewOps[winStr](userId);
+	  
+	  /*
+	  var keys = Object.keys(ops);
+	  window.alert(keys);
+	  for(var i=0; i < keys.length; ++i)
+	  {
+	      window.alert((typeof keys[i]));
+	      window.alert("Func: " + (typeof ops[keys[i]]));
+	  }*/
+      };
+  });
+  }
+
+  function loadViewOptions(app)
+  {
+      app.controller("VOptionCntrl", function ($scope, $http) {
+      $http.get("view_options.json").then(function(response) {	  
+	  $scope.viewOptions = response.data;
+      }); });
+  }
+
+function ViewOperations()
+{
+    this.View_Summary = function(id) {
+	window.alert("Calling view summary for student: " + id);
+    };
+
+    this.View_Balance = function(id) {
+     // window.alert("Opening window for viewing balance for student: " + id);		   
+			   var xhr = new XMLHttpRequest();
+			   xhr.onload = function() {
+			   if (xhr.status == 200) {
+			   // window.alert("Response is: " + xhr.responseText);
+			   show_Balance(xhr.responseText);
+			   
+			   } else {
+			     window.alert("Error occured " + xhr.statusText);
+			   }
+			   };
+
+			   xhr.open("GET", "get_balance.php?sid=" + id, true);
+			   xhr.send(null);
+			   
+	// make a small window to show the balance for the current student:
+			   var summary = "<div class='op-view'>";
+			   summary += "<p>The current Balance is:";
+			   
+			    summary += "</div>";
+	
+			   
+	
+	
+    };
+
+    this.Edit_Student_Record = function(id) {
+	window.alert("Edit Student Record for: " + id);
+
+	
+    };
+
+    this.Schedule_Courses = function(id) {
+	window.alert("Schedule Courses for Student: " + id);
+    };
+}
+
+var viewOps = new ViewOperations();
+  var app = angular.module("schl", []);
+  loadStudents(app);
+
+</script>
+  </body>
+  
+</html>

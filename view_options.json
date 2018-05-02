@@ -1,0 +1,18 @@
+[
+    {
+	"id": 1,
+	"desc": "View Summary"
+    },
+    {
+	"id": 2,
+	"desc": "View Balance"
+    },
+    {
+	"id": 3,
+	"desc": "Schedule Courses"
+    },
+    {
+	"id": 4,
+	"desc": "Edit Student Record"
+    }
+]
