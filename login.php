@@ -21,7 +21,7 @@
 
  $conn = new mysqli($host, $uname, $passwd, $db);
  $query_string = "SELECT 1 token FROM user WHERE ";
- $query_string .= "userid = '" . $uid . "' AND passwd = '" . $upasswd . "'";
+ $query_string .= "userid = '" . $uid . "' AND passwd = " ."AES_ENCRYPT('" . $upasswd . "', UNHEX(SHA2('" . $upasswd . "', 512)))";
  //echo $query_string;
  if ($result = $conn->query($query_string))
  {
@@ -33,6 +33,7 @@
  }
  else
  {
-   echo "Access denied: unknown user: $uid\n";
+   echo "Access denied: invalid userid/password: $uid\n";
+   echo $query_string;
  }
 ?>
