@@ -1,0 +1,20 @@
+id          | varchar(10)       | NO   | PRI | NULL    |       |
+| first_name  | varchar(32)       | NO   |     | NULL    |       |
+| last_name   | varchar(32)       | NO   |     | NULL    |       |
+| dob         | date              | NO   |     | NULL    |       |
+| sin         | varchar(12)       | YES  |     | NULL    |       |
+| gender      | enum('M','F','O') | YES  |     | NULL    |       |
+| address_1   | varchar(128)      | YES  |     | NULL    |       |
+| address_2   | varchar(128)      | YES  |     | NULL    |       |
+| postal_code | varchar(10)       | YES  |     | NULL    |       |
+| city        | varchar(32)       | NO   |     | NULL    |       |
+| state       | varchar(32)       | YES  |     | NULL    |       |
+| country     | varchar(32)       | NO   |     | NULL    |       |
+| phone_no    | varchar(12)       | YES  |     | NULL    |       |
+| email       | varchar(128)      | YES  |     | NULL    |       |
+| status      | tinyint(1)        | YES  |     | NULL    |
+
+
+
+
+maintain sequence;

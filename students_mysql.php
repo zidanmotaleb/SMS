@@ -16,7 +16,7 @@ if ($result_str != "")
   $result_str .= ",";
 }
 
-$result_str .= '{"ID":'  . $rs["id"] . ',';
+$result_str .= '{"ID":"'  . $rs["id"] . '",';
 $result_str .= '"FirstName":"'  . $rs["first_name"] . '",';
 $result_str .= '"LastName":"'  . $rs["last_name"] . '",';
 $result_str .= '"DateOfBirth":"'  . $rs["dob"] . '",';
