@@ -5,7 +5,7 @@ header("Content-Type: application/json; charset=UTF-8");
 
 $conn = new mysqli("localhost", "admin", "admin", "sms");
 
-$result = $conn->query("SELECT * FROM student");
+$result = $conn->query("SELECT * FROM student ORDER BY id");
 
 $result_str = "";
 

@@ -22,6 +22,9 @@
       margin: 30px auto 30px auto;
       }
 
+      p.err {
+        color: red;
+      }
       input {
       margin: 0px auto 5px auto;
       width: 300px;
@@ -68,15 +71,17 @@
   <body>
     <div ng-app="login" id="content">
       <div id="idiv" ng-controller="LoginCntrl">
-	<form name="lForm" action="login.php" method="post">
+	<!-- <form name="lForm" action="login.php" method="post"> -->
+	  <form name="lForm" method="">
       <fieldset>
 	<legend>Login</legend>
 	<input name="uname" type="text" ng-model="usr.uname" placeholder="Username" required/>
 	<input name="passwd" type="password" ng-model="usr.passwd" placeholder="Password" required/>
 	<br/>
-	<input ng-disabled="lForm.uname.$invalid || lForm.passwd.$invalid" ng-click="validate()", name="login" type="submit" value="Sign in" />
+	<p class="err" ng-show="usr.errcode != 0">Invalid Username/Password</p>
+	<input ng-disabled="lForm.uname.$invalid || lForm.passwd.$invalid" ng-click="login()", name="login" type="submit" value="Sign in" />
       </fieldset>
-      </form>
+	  </form>
       </div>
     </div>
     
@@ -84,22 +89,41 @@
     
     <script type="text/javascript">
       var app = angular.module("login", []);
-      app.controller("LoginCntrl", function($scope) {
+      app.controller("LoginCntrl", function($scope, $http) {
+      var dUsr = {uname: "admin", passwd: "Zidan"};
+      $scope.usr = dUsr;
+      $scope.usr.errcode = 0;
       
-   //   var dUsr = {uname: "James", passwd: "pass"};
-     //  $scope.usr = dUsr;
-      $scope.validate = function() {
-//      window.alert("User is: " + $scope.usr.uname + " Submit button clicked");
+      
+      $scope.login = function() {
+      $scope.validate();
+      var str = "login.php?"+"uname="+$scope.usr.uname+"&passwd="+$scope.usr.passwd;
+
+      $http.get(str).then(function(response) {
+      $scope.content = response.data;
+      if ($scope.content == 0)
+      {
+      $scope.usr.errcode = 1;
+      
+      }
+      else
+      {
+      // load a new page:
+      $scope.usr.errcode = 0;
+      window.open("sms.html");      
+      }
+      
+     // window.alert("$"+$scope.content+"$");
+      //$scope.statuscode = response.status;
+      //$scope.statustext = response.statusText;
+       });
+         
       };
-      
+      $scope.validate = function() {
+         //window.alert("User is: " + $scope.usr.uname + " Submit button clicked");
+      };
       });
       
-      /*
-      function LoginCtrl($scope)
-      {
-      var dUsr = {uname: "James", passwd: "pass"};
-      $scope.usr = dUsr;
-      }*/
     </script>
     
   </body>

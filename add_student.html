@@ -68,7 +68,8 @@
 	<fieldset>
 	  <legend>Student Information</legend>
 	  <p>
-	    <label>ID:<input id="id" name="id" type="text" ng-model="stud.id"/></label><br/>
+	    <!--<label>ID:<span ng-model="stud.id"></span></label><br/> -->
+	    <label>ID:<input id="id" name="id" type="text" ng-model="stud.id"</label><br/>
 	    <label>SIN:<input id="sin" name="sin" type="text" ng-model="stud.sin"/></label><br/>
 	    <label>First Name:<input name="firstName" type="text" ng-model="stud.firstName" required alpha-directive/></label><br/><span class="warning" ng-show="addForm.firstName.$touched && addForm.firstName.$invalid"> First Name must be entered required.</span>
 	    </p>

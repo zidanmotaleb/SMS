@@ -6,15 +6,15 @@
  $db = "sms";
 
  
- $uid = $_POST["uname"];             //"james";
- $upasswd = $_POST["passwd"];	     //"mcgill";
+ $uid = $_GET["uname"];             //"james";
+ $upasswd = $_GET["passwd"];	     //"mcgill";
 
  // TODO: add encryption handling later
  
  
- /*
- echo count($_POST) . " ";
- foreach($_POST as $key => $val )
+ 
+/* echo count($_GET) . " ";
+ foreach($_GET as $key => $val )
  {
   echo "$key => $val \n";
  }*/
@@ -27,13 +27,13 @@
  {
    $row = $result->fetch_array(MYSQLI_ASSOC);
    if ($row && $row["token"] == 1) 
-   echo "<p>" . $uid . " Successfully logged in!</p>";
+   echo 1;
    else
-   echo "<p>" . $uid . " Invalid username/password</p>";
+   echo 0; 
  }
  else
  {
-   echo "Access denied: invalid userid/password: $uid\n";
-   echo $query_string;
+   echo 0;
+   //echo $query_string;
  }
 ?>

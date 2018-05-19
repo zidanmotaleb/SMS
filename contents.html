@@ -1,4 +1,4 @@
-}<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
   <head>
     <link rel="stylesheet" href="css/jquery-ui-1.10.3.custom.min.css" />
@@ -12,6 +12,11 @@
 	<li><a href="#tab-3">List of Staff</a></li>
 	<li><a href="#tab-4">List of Courses</a></li>
       </ul>
+      <div>
+	 Search: <input ng-model="$SCntrl.query" />
+      </div>
+      
+
       <div id="tab-1">
 	<p>List of Students coming soon!</p>
       </div>
@@ -25,7 +30,7 @@
 	<p>List of courses coming soon!</p>
       </div>
     </div>
-    <script src="js/footer.js"></script>
+<!--    <script src="js/footer.js"></script> -->
     <script type="text/javascript" src="js/jquery-1.11.0.js"></script>
     <script src="js/jquery-ui.js"></script>
     <script>
@@ -39,7 +44,7 @@
 	tc += " <select ng-model='selOption' required><option ng-repeat='op in viewOptions'>{{op.desc}}</option></select>";
 	tc += "<table ng-mouseout='closeWindow()'>";
 	tc += "<tr><th>#</th><th>ID</th><th>Name</th><th>City</th><th>Country</th></tr>";
-	tc  += "<tr id='r{{row.ID}}' class='t{{$index % 2}}' ng-repeat='row in students' ";
+	tc  += "<tr id='r{{row.ID}}' class='t{{$index % 2}}' ng-repeat='row in students | filter:$SCntrl.query' ";
 	tc  += "ng-dblclick='openWindow(selOption, row.ID)'>";
 	tc += "<td ng-disabled='td'>{{$index + 1}}</td>";
 	tc += "<td ng-disabled>{{row.ID}}</td>";

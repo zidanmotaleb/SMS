@@ -51,15 +51,14 @@ if ($conn->connect_error) {
  $result = null;   
  if($result = $conn->query($dml_string))
  {
-   echo "Success";
-   echo "<h1>Record for $first_name $last_name has been successfully created</h1>"; 
+   echo "<h2 style='color:green'>Record for $first_name $last_name has been successfully created</h2>"; 
  }
  else
  {
-   echo "MySQL failed";
+   echo "<h2 style='color:red'>Error creating record for $first_name  $last_name</h2>";
  }
 
-echo $dml_string;
+//echo $dml_string;
 $conn->close();
 
 ?>
