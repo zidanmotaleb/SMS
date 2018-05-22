@@ -1,146 +1,85 @@
 <!doctype html>
 <html>
   <head>
-    <style>
-      body{
-      text-align: center;
-      background-color: #efefef;
-      color: #111111;
-      }
-      
-      #test {
-      margin: 20px auto 20px auto;
-      text-align: center;
-      width: 400px;
-      color: #32cd32;
-      }
-      
-      table {
-      margin: 20px auto 20px auto;
-      padding: 20px;
-      border: 2px solid #000000;
-      }
-      
-      td {
-       padding: 10px 5px 10px 5px;
-      }
+    <title>Nurudeen Lameed School</title>
+    <link rel="shortcut icon" href="img/School_Logo.png" type="image/type here" />
 
-      
-      tr.even {
-      background-color: #efefef; 
-      }
-      
-      tr:hover {
-      background-color: #ffff00;
-      }
-
-  button {
-    background-color: #4CAF50; /* Green */
-    border: none;
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px; 
-  }
-
-/*
-      button{
-     // background-color: #efefef; 
-      color : #0000ff; 
-//     text-decoration: underline; 
-     border-radius: 5px; 
-	  border : none;
-	  display: inline-block;
-}
-*/
-
-      /*
-      .op-view-header {
-      width: 400px;
-      height: 200px;
-      text-align: center;
-      background-color: gray;
-      }
-    .op-view {
-    width: 300px;
-    height: 150px;
-      background-color: green;
-      border: 2px solid white;
-      color: white;
-      }*/
-      
-
-      #op-view {
-      color: #fff;
-      background-color:  #000;
-      opacity: 0.9;
-      box-shadow: -3px 3px 6px #000;
-      padding: 1em 1em 2em 1em;
-      height: 30%;
-      width: 20%;
-      position: absolute; /* relative; static;  absolute; */
-      top: 0px; /*0px; */
-      left: 10px;  /* 200px;  0; */
-      border: 2px solid #000;
-      }
-      
-      #op-view h2 {
-      color: #d7666b;
-      padding-top: 0px;
-      padding-bottom: 0px;}
-      
-      #op-view a {
-       text-decoration: none;
-      color: #fff;}
-
-      #op-view .header {
-      text-align: right;
-      background-color: #000;
-      border: 5px solid green;  /* none; */
-      padding: 0 0 0 10px;}
-
-   
-      #op-view .header + div {
-        background: rgb(255, 255, 255);
-        background: rgba(255, 255, 255, 1);
-        position: relative;
-        text-align: center;
-        top: 1px;
-        color: #d7666b;
-       padding-bottom: 5px;
-       margin: 10px;
-      border: 5px solid #d7666b;}
-     
-
-      .t0 {
-      background-color: #c3e6e5;
-      }
-      
-      h1#ptitle {
-      font-size: 120%;
-      }
-    </style>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="js/custom.js"></script>
+    <link href="css/style.css" type="text/css" rel="stylesheet" media="all">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+	  <link rel="stylesheet" href="css/bootstrap-theme.css" media="screen">
   </head>
   <body ng-controller= "SCntrl" id="content" ng-app="schl" ng-init="pageTitle='List of Students'">
+<!-- ------------------->
+
+<div class="navbar navbar-inverse">
+		<div class="container">
+			<div class="navbar-header">
+				<!-- Button for smallest screens -->
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+				<a class="navbar-brand" href="index.html">
+					<img src="img/School_Logo.png" alt="Techro HTML5 template" style="width:70px;height:70px;"></a>
+			</div>
+			<div class="navbar-collapse collapse">
+				<ul class="nav navbar-nav pull-right mainNav">
+					<li class="active"><a href="index.html">Home</a></li>
+					<li><a href="https://www.google.com" target="_blank">Programs</a></li>
+					<li><a href="https://www.yahoo.com">Admissons</a></li>
+					<li><a href="https://www.hotmail.com">Faculaty & Staff</a></li>
+					<li><a href="https://www.albarqnet.com">Events</a></li>
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">Pages <b class="caret"></b></a>
+						<ul class="dropdown-menu">
+							<li><a href="www.ft.com">Right Sidebar</a></li>
+							<li><a href="#">Dummy Link1</a></li>
+							<li><a href="#">Dummy Link2</a></li>
+							<li><a href="#">Dummy Link3</a></li>
+						</ul>
+					</li>
+					<li><a href="index.html">Contact</a></li>
+
+          <!-- --------Login------------ -->
+
+            						<div id="loginBox">
+            							<form id="loginForm" action="sms_login.html" target="_blank" method="post">
+            								<input type="hidden" name="WebSiteID" id="WebSiteID" value="47">
+            								<div class="login-grids">
+            									<div class="login-grid-left">
+            										<fieldset id="body">
+            											<input type="submit" id="login" value="Log in">
+            										</fieldset>
+            									</div>
+            								</div>
+            							</form>
+            						</div>
+
+          <!-- --------End Login------------ -->
+				</ul>
+			</div>
+			<!--/.nav-collapse -->
+		</div>
+	</div>
+	<!-- /.navbar -->
+
+
+<!------------------------>
     <div>
     <header><h1 id="ptitle">{{pageTitle}}</h1></header>
     <!-- <div id="cntl" ng-controller="SCntrl"> -->
     <div ng-init="selOption='View Balance'">
     <div id="test" ng-bind="test"></div>
-    
+
     <select ng-model="selOption" required>
     <option ng-repeat="op in viewOptions">{{op.desc}}</option>
     </select>
-    
+
     <table ng-mouseout="closeWindow()">
       <tr><th>#</th><th>ID</th><th>Name</th><th>City</th><th>Country</th></tr>
       <tr id="r{{row.ID}}" class="t{{$index % 2}}" ng-repeat="row in students"
 	   ng-dblclick="openWindow(selOption, row.ID)">
 	<td ng-disabled="td">{{$index + 1}}</td>
-	<td ng-disabled>{{row.ID}}</td> 
+	<td ng-disabled>{{row.ID}}</td>
 	<td>{{row.FirstName + " " + row.LastName | uppercase}}</td>
 	<td>{{row.City}}</td>
 	<td>{{row.Country}}</td>
@@ -149,119 +88,8 @@
     </table>
     <footer>Copyright &copy; 2018</footer>
     </div>
-    
-    <script type="text/javascript">
-      
-      function loadStudents(app)
-  {
-  app.controller("SCntrl", function ($scope, $http) {   
-  $http.get("students_mysql.php").then(function(response) {
-      $scope.students = response.data.records;
-      $scope.selected = 0;
-      });
-  $http.get("view_options.json").then(function(response) {	  
-	  $scope.viewOptions = response.data;
-      });
-      
-      $scope.test = "This is a sample for listing student/teacher/staff listings; this will be loaded from a tab and the user can navigate from one tab to another ... More details on this later ...";
-      
-      $scope.open = function () {
-	window.alert("Called");
-      };
 
-      $scope.getIndex = function() {
-        window.alert("School selected index"); //getSelectedIndex()
-      };
-      
-      $scope.openWindow = function(win, userId) {
-      $scope.closeWindow(); // close any window in view:
-      if ($scope.selOption == null) {
-      window.alert("Please select the window to view first");
-       return;
-      }
-      //window.alert("Selected window: " + $scope.selOption );
-      
-      // perform a global matching; replace all matches:
-      win = win.replace(/ /g, '_');
-     // window.alert("Computed win is: " + win);
 
-      // the coordinate of the current row:
-      var rowElem = document.getElementById("r"+userId);
-      // window.alert("Row data: " + rowElem.innerHTML);
-      // now get its x, y properties:
-      
-      var pos = {top: rowElem.offsetTop,
-      left: rowElem.offsetLeft + rowElem.clientWidth
-      };
-
-     // window.alert("x: " + pos.left + "; y: " + pos.top);
-      
-	  // show the correct view:
-      viewOps[win]($http, userId, pos);
-      };
-
-      $scope.closeWindow = function() {
-      //window.alert("Do you want to dismiss the window?");
-      var win = document.getElementById("op-view");
-      if (win != null)
-      document.body.removeChild(win);
-      };
-  });
-  }
-
-  function loadViewOptions(app)
-  {
-      app.controller("VOptionCntrl", function ($scope, $http) {
-      $http.get("view_options.json").then(function(response) {	  
-	  $scope.viewOptions = response.data;
-      }); });
-  }
-
-function ViewOperations()
-      {
-      this.http = null;
-    this.View_Summary = function($http, id, pos) {
-	window.alert("Calling view summary for student: " + id);
-    };
-    
-    this.View_Balance = function($http, id, pos) {
-      $http.get("get_balance.php?sid="+id).then(function(response) {
-      // var str = "<div class='header'><a id='close' ng-model='close-view' ";
-     // str += "href='#'>close X</a></div>";
-      var str = "<div><h4>Student " + id + ":</h4><hr/>";
-      str += "The current balance is: " + response.data + "</div>";
-      
-      var balNode = document.createElement("div");
-      balNode.setAttribute("id", "op-view");
-      balNode.innerHTML = str;
-      balNode.style.top = pos.top + "px";
-      balNode.style.left = pos.left +"px";
-      document.body.appendChild(balNode);
-      });
-			   
-    };
-
-    this.Edit_Student_Record = function($http, id, pos) {
-	window.alert("Edit Student Record for: " + id);	
-    };
-
-      this.Schedule_Courses = function($http, id, pos) {
-      // loadCourses;
-      $http.get("courses.php").then(function(response) {
-
-      var courses = response.data;
-      window.alert("Size of courses: " + courses.length);
-      
-      });
-	window.alert("Schedule Courses for Student: " + id);
-    };
-}
-
-  var viewOps = new ViewOperations();
-  var app = angular.module("schl", []);
-  loadStudents(app);
-
-</script>
   </body>
-  
+
 </html>
