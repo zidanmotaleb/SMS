@@ -1,0 +1,51 @@
+  body {
+  text-align: center;
+  margin: auto;
+  }
+
+  div#content {
+  margin: 30px auto 30px auto;
+  padding: 10px;
+  width: 400px;
+  height: 300px;
+  font-weight: bold;
+  text-align: center;
+  }
+
+  div#idiv {
+  text-align: center;
+  margin: 30px auto 30px auto;
+  }
+
+  p.err {
+    color: red;
+  }
+
+  div#idiv input {
+  margin: 0px auto 5px auto;
+  width: 300px;
+  height: 30px;
+  }
+
+input.submit {
+background-color: #4CAF50; /* Green */
+border: none;
+  color: white;
+  width: 500px;
+padding: 15px 32px;
+text-align: center;
+text-decoration: none;
+display: inline-block;
+/* font-size: 16px; */
+  }
+
+  div#idiv fieldset {
+  border: 2px solid #1e90ff;
+  background-color: #cccccc;
+  color: #1e90ff;
+  }
+  legend {
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 1.2em;
+  }

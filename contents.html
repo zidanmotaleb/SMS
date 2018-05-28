@@ -2,9 +2,13 @@
 <html>
   <head>
     <link rel="stylesheet" href="css/jquery-ui-1.10.3.custom.min.css" />
-    <link rel="stylesheet" href="css/tab.css" />
+      <!-- <link rel="stylesheet" href="css/tab.css" /> -->
+      <link href="css/style.css" type="text/css" rel="stylesheet" media="all">
+      <link rel="stylesheet" href="css/bootstrap.min.css">
+  	  <link rel="stylesheet" href="css/bootstrap-theme.css" media="screen">
   </head>
   <body ng-controller= "SCntrl" id="content" ng-app="schl" ng-init="pageTitle='List of Students'">
+    <div id="header"></div>
     <div id="contents">
       <ul>
 	<li><a href="#tab-1">List of Students</a></li>
@@ -15,8 +19,6 @@
       <div>
 	 Search: <input ng-model="$SCntrl.query" />
       </div>
-      
-
       <div id="tab-1">
 	<p>List of Students coming soon!</p>
       </div>
@@ -33,116 +35,12 @@
 <!--    <script src="js/footer.js"></script> -->
     <script type="text/javascript" src="js/jquery-1.11.0.js"></script>
     <script src="js/jquery-ui.js"></script>
-    <script>
-      function loadContents()
-      {
-      // load the student tab(tab-1);
-      var tp1 = document.getElementById("tab-1");
-      //window.alert("Loading tab1's content: " + tp1.innerHTML);
-      // make the content:
-      var tc = "<div ng-init='selOption=\"View Balance\"'>";
-	tc += " <select ng-model='selOption' required><option ng-repeat='op in viewOptions'>{{op.desc}}</option></select>";
-	tc += "<table ng-mouseout='closeWindow()'>";
-	tc += "<tr><th>#</th><th>ID</th><th>Name</th><th>City</th><th>Country</th></tr>";
-	tc  += "<tr id='r{{row.ID}}' class='t{{$index % 2}}' ng-repeat='row in students | filter:$SCntrl.query' ";
-	tc  += "ng-dblclick='openWindow(selOption, row.ID)'>";
-	tc += "<td ng-disabled='td'>{{$index + 1}}</td>";
-	tc += "<td ng-disabled>{{row.ID}}</td>";
-	tc += "<td>{{row.FirstName + ' ' + row.LastName | uppercase}}</td>";
-	tc += "<td>{{row.City}}</td><td>{{row.Country}}</td></tr></table>";
-	//window.alert(tc);
-	tp1.innerHTML = tc;
-
-	// load the teachers: 
-	var tp2 = document.getElementById("tab-2");
-      var t2_tc = "<div ng-init='t2_selOption=\"View Balance\"'>";
-	t2_tc += " <select ng-model='t2_selOption' required><option ng-repeat='t2_op in t2_viewOptions'>{{t2_op.desc}}</option></select>";
-	t2_tc += "<table ng-mouseout='closeWindow()'>";
-	t2_tc += "<tr><th>#</th><th>ID</th><th>Name</th><th>City</th><th>Country</th></tr>";
-	t2_tc  += "<tr id='r{{t2_row.ID}}' class='t{{$index % 2}}' ng-repeat='t2_row in t2_students' ";
-	t2_tc  += "ng-dblclick='openWindow(t2_selOption, t2_row.ID)'>";
-	t2_tc += "<td ng-disabled='td'>{{$index + 1}}</td>";
-	t2_tc += "<td ng-disabled>{{t2_row.ID}}</td>";
-	t2_tc += "<td>{{t2_row.FirstName + ' ' + t2_row.LastName | uppercase}}</td>";
-	t2_tc += "<td>{{t2_row.City}}</td><td>{{t2_row.Country}}</td></tr></table>";
-	//window.alert(tc);
-	tp2.innerHTML = t2_tc;
-
-	}
-	
-    </script>
-    
-    <script>
-      
-      $(function() {
-
-      $("#contents" ).tabs({
-      create: function( event, ui ) {
-      loadContents();}
-      });
-      
-      $("#contents").tabs();
-
-      
-      
-      // set the active tab, the first is the default:
-      /* use the default:
-      $("#contents").tabs({
-      active: 2
-      }); */
-
-      // to activate tab using the mouseover event
-      /*
-      $( "#contents" ).tabs({
-      event: "mouseover"
-      }); */
-
-      // highlight theme:
-      $( "#contents" ).tabs({
-      classes: {
-      "ui-tabs": "highlight"
-      }
-      });
-
-      /*
-      $( "#contents" ).tabs({
-      hide: { effect: "explode", duration: 1000 }
-      }); */
-
-      // when a tab is activated; use create event for ...
-      $( "#contents" ).tabs({
-      activate: function( event, ui ) {
-      // window.alert("ACTIVATE: tab has been activated");
-      }
-      });
-
-      // bind an event listener to tab activation ...
-      $("#contents" ).on( "tabsactivate", function( event, ui ) {
-      //window.alert("BINDER: Tab has been activated");
-      //window.alert(ui.newTab.html());
-      //window.alert(ui.newPanel.html());
-      
-      } );
-      
-
-      // we can do a set up here for each tab content:
-      $("#contents").tabs({
-      beforeActivate: function( event, ui ) {
-
-      // here we refresh the tab's content:
-      //ui.newPanel.html("<p>New Tab: BEFORE activate</p>");
-      
-      //ui.newPanel.html();
-      
-      // ...
-      }
-      });
-      
-      });
-    </script>
+    <script src="js/nav.js" type="text/javascript"></script>
+    <script src="js/contents.js" type="text/javascript"></script>
     <script
       src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js">
     </script>
+
 
     <!-- do this as the last script -->
     <script src="js/tabs.js"></script>

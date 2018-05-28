@@ -1,0 +1,48 @@
+<div id="header" class="navbar navbar-inverse">
+		<div class="container">
+			<div class="navbar-header">
+				<!-- Button for smallest screens -->
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+				<a class="navbar-brand" href="index.html">
+					<img src="img/School_Logo.png" alt="Techro HTML5 template" style="width:70px;height:70px;"></a>
+			</div>
+			<div class="navbar-collapse collapse">
+				<ul class="nav navbar-nav pull-right mainNav">
+					<li class="active"><a href="index.html">Home</a></li>
+					<li><a href="https://www.google.com" target="_blank">Programs</a></li>
+					<li><a href="https://www.yahoo.com">Admissons</a></li>
+					<li><a href="https://www.hotmail.com">Faculaty & Staff</a></li>
+					<li><a href="https://www.albarqnet.com">Events</a></li>
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">Pages <b class="caret"></b></a>
+						<ul class="dropdown-menu">
+							<li><a href="www.ft.com">Right Sidebar</a></li>
+							<li><a href="#">Dummy Link1</a></li>
+							<li><a href="#">Dummy Link2</a></li>
+							<li><a href="#">Dummy Link3</a></li>
+						</ul>
+					</li>
+					<li><a href="index.html">Contact</a></li>
+
+          <!-- --------Login------------ -->
+
+            						<div id="loginBox">
+            							<form id="loginForm" action="index.html" target="_self" method="post">
+            								<input type="hidden" name="WebSiteID" id="WebSiteID" value="47">
+            								<div class="login-grids">
+            									<div class="login-grid-left">
+            										<fieldset id="body">
+            											<input type="submit" id="logout" value="Log out">
+            										</fieldset>
+            									</div>
+            								</div>
+            							</form>
+            						</div>
+
+          <!-- --------End Login------------ -->
+				</ul>
+			</div>
+			<!--/.nav-collapse -->
+		</div>
+	</div>
+	<!-- /.navbar -->
