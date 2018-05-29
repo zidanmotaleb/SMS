@@ -118,13 +118,16 @@ nav.navbar.navbar-default {
     z-index:30;
     cursor:pointer;
 }
+
+
 #loginBox {
-    position: absolute;
+     position: absolute;
     top: 45px;
     left: -282px;
-    display: none;
-    z-index: 99999;
+    display: none; 
+    z-index: 99999; 
 }
+
 #loginForm:after {
     content: '';
     position: absolute;
@@ -134,6 +137,8 @@ nav.navbar.navbar-default {
     border-right: 10px solid rgba(0, 0, 0, 0);
     border-bottom: 10px solid #FFFFFF;
 }
+
+
 #loginForm {
     width: 375px;
     background: #fff;
@@ -152,6 +157,7 @@ fieldset#body {
     -o-border-radius: 3px;
     margin: 0 0 1em 0;
 }
+
 #loginForm #checkbox {
     width:auto;
     margin:3px 6px 0 0;
@@ -167,6 +173,8 @@ fieldset#body {
     float:left;
     font-size:0.9em;
 }
+
+
 #loginForm #body fieldset label{
     display: block;
     float: none;
@@ -189,7 +197,7 @@ fieldset#body {
 }
 #loginForm #login {
 	background: #6fd508;
-    color: #fff;
+    color: #fff; 
     font-size: 1em;
     padding: 5px 20px;
     border: 1px solid #6fd508;
@@ -216,6 +224,8 @@ fieldset#body {
     text-decoration: none;
     color: #2B2B2B !important;
 }
+
+
 input:focus {
     outline:none;
 }
