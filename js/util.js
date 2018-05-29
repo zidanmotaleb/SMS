@@ -34,7 +34,7 @@ $(window).load(function() {
 });
 
 $(function() {
-    window.alert("JQuery call...");
+    //window.alert("JQuery call...");
     $("#prizes").accordion();
     $("#dest").accordion();
 });
