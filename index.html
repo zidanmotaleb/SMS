@@ -3,22 +3,21 @@
   <head>
     <title>Nurudeen Lameed School</title>
     <link rel="shortcut icon" href="img/School_Logo.png" type="image/type here" />
-
-    <link href="css/style.css" type="text/css" rel="stylesheet" media="all">
-    <link href="css/style-new.css" type="text/css" rel="stylesheet" media="all"> 
+    <link href="css/style-new.css" type="text/css" rel="stylesheet" media="all">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/bootstrap-theme.css" media="screen">
+    <link href="css/style.css" type="text/css" rel="stylesheet" media="all">
   </head>
   <body>
     <!-- ------------------->
 
-    <div class="navbar navbar-inverse">
-      <div class="container">
-	<div class="navbar-header">
+    <div class="navbar navbar-inverse main-header">
+      <div class="container header-container">
+	<div class="header-logo navbar-header">
 	  <!-- Button for smallest screens -->
 	  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
 	  <a class="navbar-brand" href="index.html">
-	    <img src="img/School_Logo.png" alt="Techro HTML5 template" style="width:70px;height:70px;"></a>
+	    <img src="img/School_Logo.png" alt="University of ABC" style="width:70px;height:70px;"></a>
 	</div>
 	<div class="navbar-collapse collapse">
 	  <ul class="nav navbar-nav pull-right mainNav">
@@ -40,7 +39,7 @@
 	    <li><a href="index.html">HelloWorld</a></li>
 	    <li>
 	      <form action="sms_login.html" target="_blank" method="post">
-		<input type="hidden" name="WebSiteID" id="WebSiteID" value="47">		
+		<input type="hidden" name="WebSiteID" id="WebSiteID" value="47">
 		<input type="submit" value="Log in">
               </form>
 	    </li>
@@ -60,7 +59,7 @@
             	</div>
               </form>
             </div>
--->	    
+-->
             <!-- --------End Login------------ -->
 	  </ul>
 	</div>
@@ -112,29 +111,6 @@
       </div>
       <!-- popular-grids -->
 
-      <!-- Accordion starts -->
-      <div id="prizes">
-	<h3>1st Prize</h3>
-	<div><p>First prize is the DJI Phantom - a small, all-in-one quadcopter designed for
-            aerial photography enthusists, it comes fully configured and ready to fly. Both
-            compact and stylish, the highly integrated design means that it's easy to carry
-            wherever you go, ready at a moment's notice.
-	  </p>
-	</div>
-	<h3>2nd Prize</h3>
-	<div><p> Second prize is the Arduino Robot - the first official Arduino on wheels! The robot has two processors, one on each of its two boards. The Motor Board controls the motors, and the Control Board reads sensors and decides how to operate. Each of the boards is a full Arduino board programmable using the Arduino IDE.
-	  </p>
-	</div>
-	<h3>3rd Prize</h3>
-	<div><p>Third prize is a collection of books for the motivated maker. Includes best-selling titles Makers by Cory Doctorow, The Maker Movement Manifesto: Rules for Innovation in the New World of Crafters, Hackers, and Tinkerers by Mark Hatch, and Invent To Learn: Making, Tinkering, and Engineering in the Classroom by Sylvia Libow Martinez.
-	  </p>
-	</div>
-      </div>
-
-
-
-      <!-- Accordion ends -->
-
       <!-- banner-bottom -->
       <div class="banner-bottom">
 	<!-- container -->
@@ -143,61 +119,31 @@
 	    <div class="banner-bottom-info">
 	    </div>
 	    <div class="col-md-4 banner-bottom-grid">
-	      <h4 class="blinker" style="color:orange;">Week's Top Deals</h4>
+	      <h4 class="blinker" style="color:orange;">Top Events</h4>
 	      <br>
-	      
-	      <div id="fav" > <!-- class="destinations"> -->
-		Here we shall show a list of items as an accordion:
 
-		<li class="button"><a href="#">Animated accord 1</a>
-		  <li class="dropdown active">
-		    This is the content of this dropdown list.
-		    We have to see what is being displayed.
-		    <img src="img/concordia01.jpg" alt="EV building" />
-		  </li>
-		</li>
-		
-		<li class="button"><a href="#">Animated accord 2</a>
-		  <li class="dropdown">
-		    This is the content of the second dropdown list.
-		    We have to see what is being displayed.
-		     <img src="img/concordia02.jpg" alt="EV building" />
-		  </li>
-		</li>
-		
-	      
-		<li class="button"><a href="#">Animated accord 3</a>
-		  <li class="dropdown">
-		    This is the content of the third dropdown list.
-		    We have to see what is being displayed.
-		     <img src="img/concordia03.jpg" alt="EV building" />
-		  </li>
-		</li>
-	      </div>
-
-	      <div id="newaccord">
+	      <div class="topevents">
 		<!-- beginning of the first item in the list of destinations -->
 		<div id="dest1">
-		  <li class="button"><a href="#">First block in the animated list</a>
+		  <ul>
+		  <li class="button"><a href="#">Network research lab</a>
 		  <li class="dropdown active">
-		    <a href="underconstruction.html">
-		      <div class="destinations-grid">
+		      <div class="topevents-grid">
 			<img src="img/concordia01.jpg" alt="" />
 		      </div>
-		      <div class="destinations-grid-info">
-			<div class="destinations-hotel">Yasmine Hammamet Tunisia welcomes you and thanks to its beaches, which are popular destination for swimming and water sports, for two persons and eight days.</div>
-			<div class="destinations-star"><span class="glyphicon glyphicon-star" aria-hidden="true"></span><span class="glyphicon glyphicon-star" aria-hidden="true"></span><span class="glyphicon glyphicon-star" aria-hidden="true"></span><span class="glyphicon glyphicon-star" aria-hidden="true"></span></div>
-			<div class="destinations-price">$400</div>
+		      <div class="topevents-grid-info">
+			<div>This is our state-of-the-art network lab. Our students/researchers work on cutting-edge researach in networking and have been able to file numerous patents in communication network.</div>
 			<div class="clearfix"> </div>
 		      </div>
-		    </a>
 		  </li>
 		  </li>
+		  </ul>
                 </div>
 		<!-- end of the second item ... -->
 
 		<!-- beginning of the second item in the list of destinations -->
                 <div id="dest2">
+                  <ul>
 		  <li class="button"><a href="#">Second in the animated list</a>
 		  <li class="dropdown">
 		    <a href="underconstruction.html">
@@ -215,11 +161,12 @@
 		    </a>
 		  </li>
 		  </li>
+		  </ul>
                 </div>
 		<!-- end of the second -->
-		
 	      <!-- beginning of the third item in the list of destinations -->
 	      <div id="dest3">
+		<ul>
 		<li class="button"><a href="#">Third in the animated list</a>
 		<li class="dropdown">
 		  <a href="index.html">
@@ -237,12 +184,13 @@
 		  </a>
 		</li>
 		</li>
+		</ul>
               </div>
 	      <!-- end of the third  -->
-	      
+
 	      <!-- end div id=newaccord -->
 	      </div>
-	      
+
 	    <div class="choose">
 	      <div class="choose-info">
 		<h4 style="color:#337AB7;">Why Choose Us</h4>
@@ -286,24 +234,25 @@
 
 	  <div class="col-md-4 banner-bottom-grid">
 	    <div class="banner-bottom-middle">
-	      <img src="img/concordia01.jpg" alt="" />
+	      <img src="img/classroom05.jpg" alt="" />
 	      <div class="destinations-grid-info tours">
-		<h5>Book your next Cork, Ireland holiday!</h5>
+		<h5>Network research laboratory</h5>
 	      </div>
-	      <img src="img/concordia03.jpg" alt="" />
+	      <img src="img/play01.jpg" alt="" />
 	      <div class="destinations-grid-info tours">
-		<h5>Book your next Sydney, Australia holiday!</h5>
+		<h5>Nice play ground!</h5>
 	      </div>
 </a>
 </div>
 <div class="top-destinations-grids">
   <div class="top-destinations-info">
-    <h4 style="color:orange;" class="blinker">Travel from Istanbul, Turkey to</h4>
+    <h4 style="color:orange;" class="blinker">More activities ...</h4>
   </div>
+
   <div class="top-destinations-bottom">
     <div class="td-grids">
-      <div class="col-xs-3 td-left">
-	<img src="img/concordia01.jpg" alt="" />
+      <div class="tiny td-left">
+	<img src="img/classroom02.jpg" alt="" />
       </div>
       <div class="col-xs-7 td-middle">
 	<a href="underconstruction.html">Kuala Lumpur, Malaysia.</a>
@@ -316,8 +265,8 @@
       <div class="clearfix"> </div>
     </div>
     <div class="td-grids">
-      <div class="col-xs-3 td-left">
-	<img src="img/concordia02.jpg" alt="" />
+      <div class="tiny td-left">
+	<img src="img/classroom04.jpg" alt="" />
       </div>
       <div class="col-xs-7 td-middle">
 	<a href="underconstruction.html">Venice, Italy.</a>
@@ -330,7 +279,7 @@
       <div class="clearfix"> </div>
     </div>
     <div class="td-grids">
-      <div class="col-xs-3 td-left">
+      <div class="tiny td-left">
 	<img src="img/concordia05.jpg"  alt="" />
       </div>
       <div class="col-xs-7 td-middle">
@@ -344,7 +293,7 @@
       <div class="clearfix"> </div>
     </div>
     <div class="td-grids">
-      <div class="col-xs-3 td-left">
+      <div class="tiny td-left">
 	<img src="img/concordia04.jpg"  alt="" />
       </div>
       <div class="col-xs-7 td-middle">
@@ -368,13 +317,13 @@
 <div class="banner-bottom-right">
 
   <a href="underconstruction.html">
-    <img src="img/concordia06.jpg"  alt="" />
+    <img src="img/classroom01.jpg"  alt="" />
     <div class="destinations-grid-info tours">
-      <h5>Book your Tripoli, Libya holiday!</h5>
+      <h5>Class room for lectures!</h5>
     </div>
-    <img src="img/concordia06.jpg"  alt="" />
+    <img src="img/play04.jpg"  alt="" />
     <div class="destinations-grid-info tours">
-      <h5>Book your next South, Libya holiday!</h5>
+      <h5>Soccer Field!</h5>
     </div>
   </a>
 

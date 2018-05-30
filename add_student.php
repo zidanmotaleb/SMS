@@ -1,7 +1,7 @@
 <?php
 
 $dml_string = "INSERT INTO student(id, first_name, last_name,";
-$dml_string .= "dob, sin, gender, address_1, address_2, postal_code, city, state, country, phone_no, email, status)";
+$dml_string .= "dob, sin, gender, address_1, address_2, postal_code, city, state, country, phone_no, email, status, deposit)";
 
 $id = $_POST["id"];
 $sin = $_POST["sin"];
@@ -17,7 +17,7 @@ $province  = $_POST["province"];
 $country =  $_POST["country"];
 $email = $_POST["email"];
 $phone = $_POST["phone"];
-
+$deposit = $_POST["deposit"];
 $tmp = $_POST["status"];
 if ($tmp == "on")
   $status = 1;
@@ -39,7 +39,8 @@ $dml_string .= '"' . $province . '",' ;
 $dml_string .= '"' . $country . '",' ;
 $dml_string .= '"' . $phone . '",' ;
 $dml_string .= '"' . $email . '",' ;
-$dml_string .= $status . ');' ;
+$dml_string .= '"' . $status . '",' ;
+$dml_string .= $deposit . ');' ;
 
 
 //echo $dml_string;
@@ -47,11 +48,11 @@ $conn = new mysqli("localhost", "admin", "admin", "sms");
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
     }
-    
- $result = null;   
+
+ $result = null;
  if($result = $conn->query($dml_string))
  {
-   echo "<h2 style='color:green'>Record for $first_name $last_name has been successfully created</h2>"; 
+   echo "<h2 style='color:green'>Record for $first_name $last_name has been successfully created</h2>";
  }
  else
  {

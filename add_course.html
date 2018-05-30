@@ -1,0 +1,86 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Add a New Course</title>
+    <link rel="shortcut icon" href="img/School_Logo.png" type="image/type here" />
+  <link href="css/style-new.css" type="text/css" rel="stylesheet" media="all">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/bootstrap-theme.css" media="screen">
+    <link href="css/style.css" type="text/css" rel="stylesheet" media="all">
+  </head>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+  <body>
+      <div id="header"></div>
+    <div id="content" ng-app="schl" ng-init="pageTitle='Add a New Course'">
+    <header><h1 id="ptitle">{{pageTitle}}</h1></header>
+    <div id="cntl" ng-controller="formCntrl">
+      <form name="addCourse" accept-charset="utf-8" novalidate action="add_course.php" method="post">
+	<fieldset id="course">
+	  <legend>Course Information</legend>
+	    <!--<label>ID:<span ng-model="stud.id"></span></label><br/> -->
+	    <label>Code:<input id="id" name="id" type="text" ng-model="course.id"</label><br/>
+	    <label>Name:<input name="name" type="text" ng-model="course.name" required alpha-directive/></label><br/><span class="warning" ng-show="addCourse.name.$touched && addCourse.name.$invalid"> Course name must be entered required.</span>
+	  <label>Credit:<input name="credit" type="text" ng-model="course.credit" required alpha-directive/></label><br/>
+	  <label>Active:<input type="checkbox" name="status" ng-model="stud.status"/></label>
+	  <br/>
+	  <input type="submit" ng-disabled="addCourse.name.$dirty && addCourse.name.$invalid " value="Save" />
+	  <input type="reset" name="cancel" value="Cancel"/>
+      </form>
+    </div>
+    </table>
+    <footer>Copyright &copy; 2018</footer>
+    </div>
+<script src=js/nav.js type="text/javascript"></script>
+<script type="text/javascript">
+  function addUser(app)
+  {
+
+  app.directive('alphaDirective', function() {
+  return {
+  require: 'ngModel',
+  link: function(scope, element, attr, mCtrl) {
+  function myValidation(value) {
+  //window.alert("here");
+  // we want name to begin with a letter only:
+  var pat = /[^a-z A-Z]/;
+  if (pat.test(value))
+  mCtrl.$setValidity('badChar', false);
+  else
+  mCtrl.$setValidity('badChar', true);
+
+  /*
+  if (value.indexOf("e") > -1) {
+  mCtrl.$setValidity('charE', true);
+  } else {
+  mCtrl.$setValidity('charE', false);
+  }*/
+
+  return value;
+  }
+  mCtrl.$parsers.push(myValidation);
+  }
+  };
+  });
+
+  app.controller("formCntrl", function ($scope, $http) {
+  $scope.submit = function() {
+  if (!$scope.stud)
+  {
+  window.alert("Please enter some value");
+  return;
+  }
+  if ($scope.stud.firstName == "")
+    window.alert("First name cannot be empty");
+     // window.alert("First name is " + $scope.stud.firstName);
+  };});
+
+}
+
+
+  var app = angular.module("schl", []);
+  addUser(app);
+
+</script>
+  </body>
+
+</html>

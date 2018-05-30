@@ -1,7 +1,7 @@
 
   body{
   text-align: center;
-  background-color:#efefef;
+  background-color: #efefef;
   color: #111111;
   }
 
@@ -18,8 +18,20 @@
   border: 2px solid #000000;
   }
 
-  td {
+  td{
    padding: 10px 5px 10px 5px;
+   height: 50px;
+   font-size: 1.4em;
+   color: #4876ff;
+  }
+  th {
+    padding: 10px 5px 10px 5px;
+    height: 50px;
+    font-size: 1.4em;
+    color: #ffff00;
+    background-color: blue;
+    font-weight: bold;
+    text-align: center;
   }
 
 
@@ -52,7 +64,17 @@ h1 {
 	display: none;
 
 }
+.main-header {
+  background-color: #ffd700;
+}
+.header-container {
+  background-color: green;
+}
 
+
+.header-logo {
+  background-color: red;
+}
 .nbs-flexisel-container {
 
 	position: relative;
@@ -253,4 +275,17 @@ height: 150px;
 
   h1#ptitle {
   font-size: 120%;
+  }
+
+  /* add student sytle */
+  .warning {
+    color: red;
+  }
+  form input[type="text"], input[type="email"] {
+    margin-left: 10px;
+    width: 400px;
+    height: 50px;
+  }
+  form label {
+   text-align: right;
   }

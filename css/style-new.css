@@ -124,8 +124,8 @@ nav.navbar.navbar-default {
      position: absolute;
     top: 45px;
     left: -282px;
-    display: none; 
-    z-index: 99999; 
+    display: none;
+    z-index: 99999;
 }
 
 #loginForm:after {
@@ -197,7 +197,7 @@ fieldset#body {
 }
 #loginForm #login {
 	background: #6fd508;
-    color: #fff; 
+    color: #fff;
     font-size: 1em;
     padding: 5px 20px;
     border: 1px solid #6fd508;
@@ -759,22 +759,23 @@ select option{
 .banner-bottom-grid img,.weekend-grid a img{
 	width:100%;
 }
-.destinations ul li{
+
+.topevents ul li{
 	list-style: none;
     text-align: left;
 	border-bottom:1px ridge #DFDFDF;
 }
-.destinations li.dropdown.active {
+.topevents li.dropdown.active {
     display: block;
 }
-.destinations ul li:nth-child(6){
+.topevents ul li:nth-child(6){
 	border-bottom:none;
 }
-.destinations ul li.button a{
+.topevents ul li.button a{
     padding: 17px 20px;
     margin: 0;
     display: block;
-    background: url(../images/arrow.png) no-repeat 322px 24px #ffffff;
+    background: url(../img/arrow.png) no-repeat 322px 24px #ffffff;
     box-shadow: 0 0px 1px #CECECE;
     color: #337ab7;
     font-size: 1em;
@@ -783,13 +784,14 @@ select option{
     -moz-transition: 0.5s all;
     -o-transition: 0.5s all;
 }
-.destinations ul li a:hover{
-	background: url(../images/arrow.png) no-repeat 322px 24px #FFFFFF;
+.topevents ul li a:hover{
+	background: url(../img/arrow.png) no-repeat 322px 24px #FFFFFF;
 }
-.destinations ul li a:focus {
+.topevents ul li a:focus {
     outline: none;
     text-decoration: none;
-}
+}
+
 li.button {
 	list-style: none;
 	text-align: left;
@@ -817,18 +819,18 @@ li.button a span{
 	border-left: 6px solid #1a2c4d;
 	display: block;
 }
-.destinations-grid imag{
+.topevents-grid imag{
 	width:100%;
 }
-.destinations-grid-info{
+.topevents-grid-info{
     padding: 1em;
     background: #ECECEC;
 }
-.destinations-hotel{
+.topevents-hotel{
 	float:left;
 	width:60%;
 }
-.destinations-star{
+.topevents-star{
     float: left;
     width: 27%;
     color: #fdd000;
@@ -846,21 +848,25 @@ li.button a span{
 .tours{
 	background:#FFF;
 }
-.destinations-grid-info h5{
+.topevents-grid-info h5{
 	color: #337ab7;
 	font-size:1em;
 	font-weight:600;
 	margin:0;
 }
-.destinations-grid-info p{
+.topevents-grid-info p{
 	color:#777;
-	font-size:.9em;
 	margin:1em 0 0 0;
 	line-height:1.8em;
 }
-.destinations-grid-info p.b-period{
+.topevents-grid-info p.b-period{
     color: #464646;
 }
+/*  Tiny pictures */
+.tiny img {
+	width: 180px;
+	height: 80px;
+}
 /*-- choose --*/
 .choose,.top-destinations-grids,.news-grids{
     margin: 2em 0;
@@ -872,7 +878,7 @@ li.button a span{
     font-size: 1.5em;
     margin: 0;
 }
-.choose-grids,.top-destinations-bottom,.news-grids-bottom,.customer-grid{
+.choose-grids, /* .top-destinations-bottom, */ .news-grids-bottom,.customer-grid{
     padding: 2em;
     background: #FFF;
     margin: 1em 0;
@@ -937,14 +943,14 @@ li.button a span{
 	-o-border-radius: 30px;
 }
 /*-- top-destinations-grids --*/
-.top-destinations-bottom{
+/* .top-destinations-bottom{
 	padding:1em;
 }
 .td-left {
     padding: 0;
 }
 .td-left img{
-	width:100%;
+	width:100%; 
 }
 .td-middle a{
     font-size: .9em;
@@ -969,6 +975,7 @@ li.button a span{
 .td-grids:nth-child(4){
 	margin-bottom: 0;
 }
+*/
 /*-- news --*/
 .date-text{
 	margin-bottom:1em;

@@ -31,6 +31,20 @@ t2_tc += "<td>{{t2_row.FirstName + ' ' + t2_row.LastName | uppercase}}</td>";
 t2_tc += "<td>{{t2_row.City}}</td><td>{{t2_row.Country}}</td></tr></table>";
 //window.alert(tc);
 tp2.innerHTML = t2_tc;
+
+// load all the courses:
+var tp4 = document.getElementById("tab-4");
+var t4_tc = "<table ng-mouseout='closeWindow()'>";
+t4_tc += "<tr><th>#</th><th>ID</th><th>Name</th><th>Credit</th><th>Status</th></tr>";
+t4_tc  += "<tr id='r{{t4_row.ID}}' class='t{{$index % 2}}' ng-repeat='t4_row in courses| filter:$SCntrl.query' ";
+t4_tc  += "ng-dblclick='openWindow(t4_selOption, t4_row.ID)'>";
+t4_tc += "<td ng-disabled='td'>{{$index + 1}}</td>";
+t4_tc += "<td ng-disabled>{{t4_row.ID}}</td>";
+t4_tc += "<td>{{t4_row.Name | uppercase}}</td>";
+t4_tc += "<td>{{t4_row.Credit}}</td><td>{{t4_row.Status == 1 ? 'Active' : 'Not Active'}}</td></tr></table>";
+//window.alert(tc);
+tp4.innerHTML = t4_tc;
+
 }
 
 $(function() {
