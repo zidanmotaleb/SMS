@@ -12,16 +12,16 @@
   <body>
       <div id="header"></div>
     <div id="content" ng-app="schl" ng-init="pageTitle='Add a New Course'">
-    <header><h1 id="ptitle">{{pageTitle}}</h1></header>
+    <!-- <header><h1 id="ptitle">{{pageTitle}}</h1></header> -->
     <div id="cntl" ng-controller="formCntrl">
-      <form name="addCourse" accept-charset="utf-8" novalidate action="add_course.php" method="post">
+      <form class="info-form" name="addCourse" accept-charset="utf-8" novalidate action="add_course.php" method="post">
 	<fieldset id="course">
 	  <legend>Course Information</legend>
 	    <!--<label>ID:<span ng-model="stud.id"></span></label><br/> -->
 	    <label>Code:<input id="id" name="id" type="text" ng-model="course.id"</label><br/>
 	    <label>Name:<input name="name" type="text" ng-model="course.name" required alpha-directive/></label><br/><span class="warning" ng-show="addCourse.name.$touched && addCourse.name.$invalid"> Course name must be entered required.</span>
 	  <label>Credit:<input name="credit" type="text" ng-model="course.credit" required alpha-directive/></label><br/>
-	  <label>Active:<input type="checkbox" name="status" ng-model="stud.status"/></label>
+	  <label>Active:<input type="checkbox" name="status" checked="checked" ng-model="stud.status"/></label>
 	  <br/>
 	  <input type="submit" ng-disabled="addCourse.name.$dirty && addCourse.name.$invalid " value="Save" />
 	  <input type="reset" name="cancel" value="Cancel"/>

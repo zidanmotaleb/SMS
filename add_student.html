@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
   <head>
-    <title>Add New Student</title>
+    <title>Add a New Student</title>
     <link rel="shortcut icon" href="img/School_Logo.png" type="image/type here" />
   <link href="css/style-new.css" type="text/css" rel="stylesheet" media="all">
   <link rel="stylesheet" href="css/bootstrap.min.css">
@@ -12,11 +12,11 @@
   <body>
       <div id="header"></div>
     <div id="content" ng-app="schl" ng-init="pageTitle='Add a New Student'">
-    <header><h1 id="ptitle">{{pageTitle}}</h1></header>
+   <!-- <header><h1 id="ptitle">{{pageTitle}}</h1></header> -->
     <div id="cntl" ng-controller="formCntrl">
-      <form name="addForm" accept-charset="utf-8" novalidate action="add_student.php" method="post">
+      <form class="info-form" name="addForm" accept-charset="utf-8" novalidate action="add_student.php" method="post">
 	<fieldset id="student">
-	  <legend>Student Information</legend>
+	  <legend>New Student Information</legend>
 	    <!--<label>ID:<span ng-model="stud.id"></span></label><br/> -->
 	    <label>ID:<input id="id" name="id" type="text" ng-model="stud.id"</label><br/>
 	    <label>SIN:<input id="sin" name="sin" type="text" ng-model="stud.sin"/></label><br/>
@@ -49,9 +49,9 @@
 	  </label><br/>
 	  <label>Phone#:<input type="text" name="phone" ng-model="stud.phone"/></label>
 	  <br/>
-    <label>Deposit:<input type="text" name="deposit" ng-init="stud.deposit=0.00" value="xyz" ng-model="stud.deposit"/></label>
+    <label>Deposit:<input type="text" name="deposit" ng-init="stud.deposit=0.00" ng-model="stud.deposit"/></label>
 	  <br/>
-	  <label>Active:<input type="checkbox" name="status" ng-model="stud.status"/></label>
+	  <label>Active:<input type="checkbox" checked="checked" name="status" ng-model="stud.status" /></label> 
 	  <br/>
 	  <input type="submit" ng-disabled="addForm.firstName.$dirty &&
 addForm.firstName.$invalid || (addForm.lastName.$dirty && addForm.lastName.$invalid)"  value="Save" />
